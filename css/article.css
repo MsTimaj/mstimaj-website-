@@ -1,0 +1,258 @@
+/* Article Page Specific Styles */
+.article-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    padding-top: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* Article Header */
+.article-header {
+    margin-bottom: 3rem;
+    margin-top: 0;
+    position: relative;
+    z-index: 2;
+}
+
+.article-header h1 {
+    font-size: 3rem;
+    line-height: 1.1;
+    margin: 2rem 0;
+    color: var(--text);
+    font-family: var(--font-mono);
+    text-shadow: var(--neon-glow);
+    letter-spacing: -0.02em;
+    font-weight: 700;
+}
+
+.article-meta {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    color: var(--text);
+}
+
+.article-category {
+    color: var(--accent);
+}
+
+.article-date, .read-time {
+    color: var(--text-secondary);
+}
+
+/* Article Body */
+.article-body {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text);
+}
+
+.article-body h2 {
+    font-size: 2rem;
+    margin: 2.5rem 0 1.5rem;
+    color: var(--text);
+    font-family: var(--font-mono);
+}
+
+.article-body p {
+    margin-bottom: 1.5rem;
+}
+
+.article-body ul {
+    margin: 1.5rem 0;
+    padding-left: 1.5rem;
+}
+
+.article-body li {
+    margin-bottom: 0.75rem;
+}
+
+/* Article Footer */
+.article-footer {
+    margin: 4rem 0;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(0, 255, 157, 0.1);
+}
+
+.article-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+}
+
+.tag {
+    background: rgba(0, 255, 157, 0.1);
+    color: var(--accent);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+}
+
+.share-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.share-button {
+    background: transparent;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    font-family: var(--font-mono);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.share-button:hover {
+    background: var(--accent);
+    color: var(--bg);
+}
+
+/* Comments Section */
+.comments-section {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(0, 255, 157, 0.1);
+}
+
+.comments-section h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--text);
+    font-family: var(--font-mono);
+}
+
+.comment {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: rgba(0, 255, 157, 0.05);
+    border-radius: 8px;
+}
+
+.comment-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    font-family: var(--font-mono);
+}
+
+.comment-author {
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.comment-date {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.comment-content p {
+    color: var(--text);
+    line-height: 1.6;
+}
+
+.comment-form {
+    margin-top: 2rem;
+}
+
+.comment-form textarea {
+    width: 100%;
+    min-height: 120px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background: rgba(0, 255, 157, 0.05);
+    border: 1px solid rgba(0, 255, 157, 0.1);
+    border-radius: 4px;
+    color: var(--text);
+    font-family: var(--font-sans);
+    resize: vertical;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.comment-form input {
+    width: 100%;
+    padding: 0.75rem;
+    background: rgba(0, 255, 157, 0.05);
+    border: 1px solid rgba(0, 255, 157, 0.1);
+    border-radius: 4px;
+    color: var(--text);
+    font-family: var(--font-sans);
+}
+
+.comment-form button {
+    background: var(--accent);
+    color: var(--primary);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    font-family: var(--font-mono);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.comment-form button:hover {
+    background: var(--text);
+    color: var(--primary);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .article-container {
+        padding: 1rem;
+        padding-top: 4rem;
+    }
+
+    .article-header h1 {
+        font-size: 2.5rem;
+    }
+
+    .article-meta {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--accent);
+    text-decoration: none;
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    margin-top: 3rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.back-link:hover {
+    background: rgba(0, 255, 157, 0.1);
+    color: var(--text);
+}
+
+.back-arrow {
+    font-size: 1.2rem;
+}
+
+.article-content {
+    padding-top: 0;
+} 

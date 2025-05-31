@@ -1,0 +1,10 @@
+# Ignore HTML files
+*.html
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore IDE files
+.vscode/
+.idea/ 
