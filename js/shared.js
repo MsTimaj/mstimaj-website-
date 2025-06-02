@@ -118,38 +118,38 @@ function loadSharedFooter() {
                 <div class="footer-section">
                     <h3>Quick Links</h3>
                     <ul>
-                        <li><a href="https://mstimaj.com/home/">Home</a></li>
-                        <li><a href="https://mstimaj.com/human-algorithm/">The Human Algorithm</a></li>
-                        <li><a href="https://mstimaj.com/frequency/">Frequency</a></li>
-                        <li><a href="https://mstimaj.com/projects/">Projects</a></li>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/human-algorithm/">The Human Algorithm</a></li>
+                        <li><a href="/frequency/">Frequency</a></li>
+                        <li><a href="/projects/">Projects</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-section">
                     <h3>Framework</h3>
                     <ul>
-                        <li><a href="https://mstimaj.com/framework/#architecture-grid">Architecture</a></li>
-                        <li><a href="https://mstimaj.com/framework/#protocol-container">Protocol</a></li>
+                        <li><a href="/framework/#architecture-grid">Architecture</a></li>
+                        <li><a href="/framework/#protocol-container">Protocol</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-section">
                     <h3>Connect</h3>
                     <ul>
-                        <li><a href="https://mstimaj.com/connect/#services">Session + Services</a></li>
-                        <li><a href="https://mstimaj.com/connect/#contact">Get in Touch</a></li>
-                        <li><a href="https://mstimaj.com/connect/#newsletter">Stay in the Loop</a></li>
+                        <li><a href="/connect/#services">Session + Services</a></li>
+                        <li><a href="/connect/#contact">Get in Touch</a></li>
+                        <li><a href="/connect/#newsletter">Stay in the Loop</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-section">
                     <h3>Download from the Void</h3>
                     <ul>
-                        <li><a href="https://mstimaj.com/void/#identity">Identity Statement</a></li>
-                        <li><a href="https://mstimaj.com/void/#transparency">Statement of Transparency</a></li>
-                        <li><a href="https://mstimaj.com/void/#category">Category Guide</a></li>
-                        <li><a href="https://mstimaj.com/void/#notices">Notices</a></li>
-                        <li><a href="https://mstimaj.com/void/#guidelines">Reader Guidelines</a></li>
+                        <li><a href="/void/#identity">Identity Statement</a></li>
+                        <li><a href="/void/#transparency">Statement of Transparency</a></li>
+                        <li><a href="/void/#category">Category Guide</a></li>
+                        <li><a href="/void/#notices">Notices</a></li>
+                        <li><a href="/void/#guidelines">Reader Guidelines</a></li>
                     </ul>
                 </div>
             </div>
@@ -203,31 +203,31 @@ function loadSharedHeader() {
             <div class="nav-container">
                 <div class="nav-left">
                     <div class="identity-toggle">
-                        <a href="https://mstimaj.com" class="ms-side" aria-label="Visit Mstimaj">MS</a>
+                        <a href="/" class="ms-side" aria-label="Visit Mstimaj">MS</a>
                         <a href="https://fatimajalloh.com" class="fj-side" aria-label="Visit Fatima Jalloh">FJ</a>
                     </div>
                 </div>
                 <div class="nav-right">
                     <div class="nav-links">
-                        <a href="https://mstimaj.com/home/" class="link-item">
+                        <a href="/" class="link-item">
                             <span class="link-title">Home</span>
                         </a>
-                        <a href="https://mstimaj.com/human-algorithm/" class="link-item">
+                        <a href="/human-algorithm/" class="link-item">
                             <span class="link-title">The Human Algorithm</span>
                         </a>
-                        <a href="https://mstimaj.com/frequency/" class="link-item">
+                        <a href="/frequency/" class="link-item">
                             <span class="link-title">Frequency</span>
                         </a>
-                        <a href="https://mstimaj.com/framework/" class="link-item">
+                        <a href="/framework/" class="link-item">
                             <span class="link-title">Framework</span>
                         </a>
-                        <a href="https://mstimaj.com/projects/" class="link-item">
+                        <a href="/projects/" class="link-item">
                             <span class="link-title">Projects</span>
                         </a>
-                        <a href="https://mstimaj.com/connect/" class="link-item">
+                        <a href="/connect/" class="link-item">
                             <span class="link-title">Connect</span>
                         </a>
-                        <a href="https://mstimaj.com/void/" class="link-item">
+                        <a href="/void/" class="link-item">
                             <span class="link-title">Download from the Void</span>
                         </a>
                     </div>

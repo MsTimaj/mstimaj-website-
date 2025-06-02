@@ -140,6 +140,98 @@ get_header();
         content: " ";
         margin-right: 0.5rem;
       }
+
+      /* Popup Styles for Form Submissions */
+      .popup-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        animation: fadeIn 0.3s ease;
+      }
+
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+
+      .popup-content {
+        background: var(--secondary, #1a1a2e);
+        border: 2px solid var(--accent, #00ff9d);
+        padding: 2rem;
+        border-radius: 8px;
+        max-width: 500px;
+        width: 90%;
+        position: relative;
+        box-shadow: 0 0 30px rgba(0, 255, 157, 0.3);
+        animation: slideUp 0.3s ease;
+      }
+
+      @keyframes slideUp {
+        from {
+          transform: translateY(20px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      .popup-content.popup-success {
+        border-color: var(--accent, #00ff9d);
+      }
+
+      .popup-content.popup-error {
+        border-color: #ff0040;
+        box-shadow: 0 0 30px rgba(255, 0, 64, 0.3);
+      }
+
+      .popup-close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: none;
+        border: none;
+        color: var(--accent, #00ff9d);
+        font-size: 28px;
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+      }
+
+      .popup-close:hover {
+        transform: rotate(90deg);
+        color: #fff;
+      }
+
+      .popup-message {
+        color: #fff;
+        font-size: 1.1rem;
+        line-height: 1.6;
+        padding-right: 20px;
+      }
+
+      @media (max-width: 768px) {
+        .popup-content {
+          padding: 1.5rem;
+          margin: 1rem;
+        }
+
+        .popup-message {
+          font-size: 1rem;
+        }
+      }
     </style>
 </head>
 <body>
@@ -165,15 +257,20 @@ get_header();
                     <div class="service-selector">
                         <select id="session-select" class="service-select" aria-label="Select a creative session type">
                             <option value="">Choose a Creative Session</option>
-                            <option value="build-noai">Build Your First Website With Me (No AI)</option>
-                            <option value="build-withai">Build Your First Website With Me (With AI)</option>
-                            <option value="strategy">Creative Strategy Session</option>
-                            <option value="workshop">Creative Workshop: Story to Screen</option>
-                            <option value="learnai">Learn AI for Creatives</option>
-                            <option value="agents">Intro to AI Agents</option>
-                            <option value="frontend-backend">Basics of Frontend & Backend</option>
-                            <option value="prompt-engineering">Prompt Engineering 101</option>
-                            <option value="learn-with-ai">Learn How to Learn with AI</option>
+                            <option value="quick-prompt-fix">🎯 Quick Prompt Fix - $50 (30 min)</option>
+                            <option value="ai-tool-help">🛠️ AI Tool Selection Help - $50 (30 min)</option>
+                            <option value="prompt-engineering">🎯 Prompt Engineering 101 - $100 (60 min)</option>
+                            <option value="learn-with-ai">📚 Learn How to Learn with AI - $100 (60 min)</option>
+                            <option value="ai-writing-workshop">📝 AI Writing Workshop - $100 (60 min)</option>
+                            <option value="ai-design-basics">🎨 AI Design Basics - $100 (60 min)</option>
+                            <option value="strategy">💡 Creative Strategy Session - $120 (60 min)</option>
+                            <option value="content-ai">✍️ Content Creation with AI - $130 (60 min)</option>
+                            <option value="learnai">🎨 Learn AI for Creatives - $150 (90 min)</option>
+                            <option value="frontend-backend">💻 Basics of Frontend & Backend - $150 (90 min)</option>
+                            <option value="ai-automation">⚙️ AI Automation Basics - $170 (90 min)</option>
+                            <option value="agents">🤖 Intro to AI Agents - $180 (90 min)</option>
+                            <option value="build-withai">🤖 Build Your First Website (With AI) - $180 (90 min)</option>
+                            <option value="build-noai">🏗️ Build Your First Website (No AI) - $200 (90 min)</option>
                         </select>
 
                         <div id="session-details" class="service-details" style="display: none;" aria-live="polite" role="region" aria-label="Session details">
@@ -212,8 +309,22 @@ get_header();
                             </div>
 
                             <div class="booking-actions" role="group" aria-label="Booking actions">
-                                <a href="#" class="btn-book" target="_blank" aria-label="Book this session now">Book Now</a>
+                                <a href="<?php echo home_url('/book-session/'); ?>" class="btn-book" id="book-now-btn" aria-label="Book this session now">Book Now</a>
                             </div>
+                        </div>
+                    </div>
+
+                    <div class="service-card" data-service="session">
+                        <div class="service-content">
+                            <h3>Book a Session</h3>
+                            <p><strong>Leverage AI to transform your ideas from concepts to reality.</strong> Unlike pre-designed courses, these personalized sessions adapt to YOUR specific challenges and goals.</p>
+                            <p style="margin-top: 1rem;">
+                                <strong>30 min:</strong> Quick AI troubleshooting & tool selection<br>
+                                <strong>60 min:</strong> Strategy planning & workflow design<br>
+                                <strong>90 min:</strong> Hands-on building & implementation
+                            </p>
+                            <p style="margin-top: 1rem;">Bring your questions, roadblocks, or half-built projects. Together, we'll use AI as our co-pilot to accelerate your journey from "what if" to "it's done."</p>
+                            <a href="<?php echo home_url('/book-session/'); ?>" class="btn-book" style="margin-top: 1rem;">Start Your Journey</a>
                         </div>
                     </div>
                 </div>
@@ -259,7 +370,8 @@ get_header();
         </section>
     </main>
 
-    <script src="js/shared.js"></script>
+    <script src="<?php echo get_template_directory_uri(); ?>/js/shared.js"></script>
+    <script src="<?php echo get_template_directory_uri(); ?>/js/session-selector.js"></script>
 </body>
 </html>
 

@@ -1,10 +1,60 @@
-# Ignore HTML files
-*.html
+# Intellectual Property
+cursor_rules.md
+RULES.md
+SECURITY.md
+SESSION_SUMMARY.md
+PROBLEM_LOG.md
+session-type-explainer.md
 
-# Ignore system files
+# Stripe Integration
+STRIPE_*.md
+includes/stripe-integration.php
+
+# Configuration
+.env
+wp-config.php
+composer.json
+composer.lock
+vendor/
+
+# Logs and databases
+*.log
+*.sql
+*.sqlite
+
+# Environment specific
+.env.*
+config.*.php
+
+# WordPress specific
+wp-content/uploads/
+wp-content/upgrade/
+wp-content/backup-db/
+wp-content/cache/
+wp-content/backups/
+
+# IDE and OS files
 .DS_Store
-Thumbs.db
-
-# Ignore IDE files
+.idea/
 .vscode/
-.idea/ 
+*.swp
+*.swo
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+
+# Test and Development Files
+test-sessions.html
+test-availability.php
+functions.php
+
+# JavaScript files with sensitive logic
+js/session-selector.js
+js/form-handler.js
+js/shared.js
+js/customizer.js
+
+# Ignore HTML files
+*.html 

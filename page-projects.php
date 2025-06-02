@@ -181,7 +181,7 @@ get_header();
                     </div>
                     <div class="project-actions" role="group" aria-label="Project actions">
                         <a href="https://linktr.ee/Mstimaj" target="_blank" class="btn-primary" aria-label="Support ProveitPal project">Support this Project</a>
-                        <a href="connect#contact" class="btn-secondary" aria-label="Collaborate on ProveitPal project">Collaborate</a>
+                        <a href="/connect#contact" class="btn-secondary" aria-label="Collaborate on ProveitPal project">Collaborate</a>
                     </div>
                 </div>
             </article>
@@ -206,7 +206,7 @@ get_header();
                     </div>
                     <div class="project-actions" role="group" aria-label="Project actions">
                         <a href="https://linktr.ee/Mstimaj" target="_blank" class="btn-primary" aria-label="Support Slfambul project">Support this Project</a>
-                        <a href="connect#contact" class="btn-secondary" aria-label="Collaborate on Slfambul project">Collaborate</a>
+                        <a href="/connect#contact" class="btn-secondary" aria-label="Collaborate on Slfambul project">Collaborate</a>
                     </div>
                 </div>
             </article>
@@ -231,7 +231,7 @@ get_header();
                     </div>
                     <div class="project-actions" role="group" aria-label="Project actions">
                         <a href="https://linktr.ee/Mstimaj" target="_blank" class="btn-primary" aria-label="Support YangaChic project">Support this Project</a>
-                        <a href="connect#contact" class="btn-secondary" aria-label="Collaborate on YangaChic project">Collaborate</a>
+                        <a href="/connect#contact" class="btn-secondary" aria-label="Collaborate on YangaChic project">Collaborate</a>
                     </div>
                 </div>
             </article>

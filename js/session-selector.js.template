@@ -1,0 +1,94 @@
+jQuery(document).ready(function($) {
+    const sessionSelect = $('#session-select');
+    const sessionDetails = $('#session-details');
+    const serviceTitle = $('.service-title');
+    const serviceTime = $('.service-time');
+    const servicePrice = $('.service-price');
+    const serviceDescription = $('.service-description');
+    const bookButton = $('.btn-book');
+
+    // Session data structure (actual data removed for security)
+    const sessions = {
+        'session-type-1': {
+            title: '[Session Title]',
+            time: '[Duration]',
+            price: '[Price]',
+            description: '[Session Description]'
+        },
+        'session-type-2': {
+            title: '[Session Title]',
+            time: '[Duration]',
+            price: '[Price]',
+            description: '[Session Description]'
+        }
+        // Additional session types would be listed here
+    };
+
+    sessionSelect.on('change', function() {
+        const selectedValue = $(this).val();
+        
+        if (!selectedValue) {
+            sessionDetails.hide();
+            return;
+        }
+
+        // Get the selected session
+        const selectedSession = sessions[selectedValue];
+
+        if (selectedSession) {
+            // Update session details
+            serviceTitle.text(selectedSession.title);
+            serviceTime.text(selectedSession.time);
+            servicePrice.text(selectedSession.price);
+            serviceDescription.text(selectedSession.description);
+
+            // Update booking button
+            updateBookingLink(selectedValue);
+
+            // Show session details
+            sessionDetails.show();
+        }
+    });
+
+    // Handle add-ons selection
+    $('.add-on-checkbox').on('change', function() {
+        updateTotalPrice();
+        const selectedSession = sessionSelect.val();
+        if (selectedSession) {
+            updateBookingLink(selectedSession);
+        }
+    });
+    
+    function updateBookingLink(sessionSlug) {
+        // Get selected add-ons
+        const selectedAddons = [];
+        $('.add-on-checkbox:checked').each(function() {
+            selectedAddons.push($(this).val());
+        });
+        
+        // Build URL with session and add-ons
+        let bookingUrl = window.location.origin + '/book-session/?session=' + sessionSlug;
+        if (selectedAddons.length > 0) {
+            bookingUrl += '&addons=' + selectedAddons.join(',');
+        }
+        bookingUrl += '&step=2';
+        
+        bookButton.attr('href', bookingUrl);
+        bookButton.removeAttr('target');
+    }
+
+    function updateTotalPrice() {
+        let total = 0;
+        const basePrice = parseInt(servicePrice.text().replace('$', ''));
+        total += basePrice;
+
+        $('.add-on-checkbox:checked').each(function() {
+            const price = parseInt($(this).closest('.add-on-item').find('.add-on-price').text().replace('$', ''));
+            total += price;
+        });
+
+        if ($('#total-price').length) {
+            $('#total-price').text('$' + total);
+        }
+    }
+}); 
